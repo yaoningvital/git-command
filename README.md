@@ -1,7 +1,7 @@
 # git-command
 record git command used in work
 
-1. 查看远程仓库：
+*1. 查看远程仓库：*
 `
     $ git remote -v
 `
