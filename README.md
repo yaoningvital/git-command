@@ -32,6 +32,25 @@ sae     https://git.sinacloud.com/ikangtjb (push)
 比如，要在远程仓库中创建一个叫做“wxTest”的分支：
 
 
+**2. 查看远程分支**
+
+`
+git branch -r
+`
+
+在我的项目中输入以上命令，输出如下：
+
+```
+E:\projects\im-h5-wechat>git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+  origin/pre-prod
+  origin/prod
+  origin/root
+  origin/test
+  origin/uat
+```
+
 
 # 四、本地分支相关命令
 
@@ -65,7 +84,27 @@ Switched to a new branch 'V1.2.0'
 git checkout -b V1.2.0 origin/V1.2.0
 `
 
+**3. 查看本地分支：**
 
+`
+git branch
+`
 
+在我的项目中执行这个命令，输出如下：
+
+```
+E:\projects\im-h5-wechat>git branch   
+* master                              
+  prod                                
+  root                                
+  test                                
+  uat                                 
+```
+
+**4. 删除本地仓库的某一个分支wxTest**
+
+`
+git branch -d wxText
+`
 
 
