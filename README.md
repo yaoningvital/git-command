@@ -38,3 +38,16 @@ Switched to a new branch 'V1.2.0'
 `
 git checkout -b V1.2.0 origin/V1.2.0
 `
+
+**3. 本地仓库创建一个新分支，并立即切换到新分支：**
+
+比如，在本地仓库新建一个“wxTest”的分支，并立即切换到该分支：
+
+`
+git checkout -b wxTest
+`
+
+**4. 在远程仓库中创建一个新分支**
+
+比如，要在远程仓库中创建一个叫做“wxTest”的分支：
+
