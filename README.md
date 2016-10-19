@@ -1,7 +1,7 @@
 # git-command
 record git command used in work
 
-* **一、远程仓库相关命令**
+#一、远程仓库相关命令
 
 **1. 查看远程仓库：**
 
@@ -20,7 +20,7 @@ sae     https://git.sinacloud.com/ikangtjb (push)
 ```
 
 
-* **二、本地仓库相关命令**
+# 二、本地仓库相关命令
 
 
 
