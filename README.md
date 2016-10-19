@@ -1,7 +1,7 @@
 # git-command
 record git command used in work
 
-#一、远程仓库相关命令
+# 一、远程仓库相关命令
 
 **1. 查看远程仓库：**
 
@@ -24,7 +24,7 @@ sae     https://git.sinacloud.com/ikangtjb (push)
 
 
 
-* 三、远程分支相关命令
+# 三、远程分支相关命令
 
 
 **1. 在远程仓库中创建一个新分支**
@@ -33,7 +33,7 @@ sae     https://git.sinacloud.com/ikangtjb (push)
 
 
 
-* 四、本地分支相关命令
+# 四、本地分支相关命令
 
 **1. 本地仓库创建一个新分支，并立即切换到新分支：**
 
