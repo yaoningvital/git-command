@@ -157,7 +157,38 @@ E:\projects\im-h5-wechat>git branch -r
   origin/wxTest
 ```
 
-通过上面的命令，可以看到，确实在origin上新建了一个wxTest分支。那么现在，本地的wxTest和远端的wxTest之间有没有建立联系呢？本地的wxTest有没有track远端的wxTest呢？我在本地的wxTest中做了一些修改，然后push，如下：
+通过上面的命令，可以看到，确实在origin上新建了一个wxTest分支。
+
+在网上查，说上面命令中的origin代表的是远程仓库的地址，在这个命令中origin用远程仓库地址代替也可以实现，我试了一下，如下：
+
+`
+git push remote-repository-name local-branch-name:remote-branch-name
+`
+
+```
+E:\projects\im-h5-wechat>git push git@gitlab.it.ikang.com:fe/im-h5-wechat.git wxTest:wxTest 
+Counting objects: 6, done.                                                                  
+Delta compression using up to 4 threads.                                                    
+Compressing objects: 100% (6/6), done.                                                      
+Writing objects: 100% (6/6), 642 bytes | 0 bytes/s, done.                                   
+Total 6 (delta 3), reused 0 (delta 0)                                                       
+To git@gitlab.it.ikang.com:fe/im-h5-wechat.git                                              
+ * [new branch]      wxTest -> wxTest                                                       
+                                                                                            
+E:\projects\im-h5-wechat>git branch -r                                                      
+  origin/HEAD -> origin/master                                                              
+  origin/master                                                                             
+  origin/pre-prod                                                                           
+  origin/prod                                                                               
+  origin/root                                                                               
+  origin/test                                                                               
+  origin/uat                                                                                
+                                                                                            
+```
+
+由此可以看出，通过这种方式，不能在远程仓库创建一个新分支。
+
+接上，通过上面`git push origin wxTest:wxTest`这种方式在远端创建一个新分支wxTest之后，本地的wxTest和远端的wxTest之间有没有建立联系呢？本地的wxTest有没有track远端的wxTest呢？我在本地的wxTest中做了一些修改，然后push，如下：
 
 ```
 E:\projects\im-h5-wechat>git push
