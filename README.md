@@ -201,7 +201,44 @@ To git@gitlab.it.ikang.com:fe/im-h5-wechat.git
    11cc880..e2eff39  wxTest -> wxTest
 ```
 
-由此可以看出，通过这种方式创建远程仓库的新分支，并且可以建立track。
+由上，是否表明本地的wxTest和远端的wxTest之间建立了track呢？我尝试了`git pull`命令：
+
+```
+E:\projects\im-h5-wechat>git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> wxTest
+```
+
+由上可看出，通过这种方式并没有给本地wxTest分支建立与某一个远端分支的跟踪关系。还需要使用这个命令：
+
+`
+git branch --set-upstream-to=<remote>/<branch> wxTest
+`
+
+```
+E:\projects\im-h5-wechat>git branch --set-upstream-to=origin/wxTest wxTest
+Branch wxTest set up to track remote branch wxTest from origin.
+
+E:\projects\im-h5-wechat>git pull
+Already up-to-date.
+```
+
+这样就建立了本地wxTest分支和远端wxTest分支的跟踪关系。
+
+注意：上面的命令中`<remote>`不能用实际仓库名来代替，如下：
+
+`
+git branch --set-upstream-to=git@gitlab.it.ikang.com:fe/im-h5-wechat.git/wxTest wxTest
+`
+
+用上面的命令来实现跟踪会报错。
 
 # 四、本地分支相关命令
 
