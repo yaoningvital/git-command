@@ -292,7 +292,10 @@ E:\projects\im-h5-wechat>git branch
 **4. 删除本地仓库的某一个分支wxTest**
 
 `
-git branch -d wxText
+git branch -d wxTest
 `
-
+强制删除本地仓库的某一个分支：
+`
+git branch -D wxTest
+`
 
