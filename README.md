@@ -301,19 +301,19 @@ git branch -D wxTest
 
 **5. 从远程库中获取某个分支的更新，再与本地指定的分支进行自动merge。完整格式是：**
 
-`
+```
 git pull <远程库名> <远程分支名>:<本地分支名> 
-`
+```
 
 比如，从im-h5的远程仓库中获取master分支的最新内容，与我本地的im-h5-wechat仓库中的master分支合并，要写成：
 
-`
+```
 git pull git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git master:master
-`
+```
 
 如果是要与本地当前分支merge，则冒号后面的<本地分支名>可以不写。
 比如，我当前本地的仓库是在master分支，我也是要与本地的master分支合并，则可以写成：
 
-`
+```
 git pull git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git master
-`
+```
