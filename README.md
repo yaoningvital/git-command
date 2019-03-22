@@ -13,10 +13,10 @@ git remote -v
   
 ```
 E:\projects\im-h5>git remote -v
-origin  git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git (fetch)
-origin  git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git (push)
-sae     https://git.sinacloud.com/ikangtjb (fetch)
-sae     https://git.sinacloud.com/ikangtjb (push)
+origin  git@gitlab.it.XXXX.com:fuchao.zheng/im-h5.git (fetch)
+origin  git@gitlab.it.XXXX.com:fuchao.zheng/im-h5.git (push)
+sae     https://git.sinacloud.com/XXXXtjb (fetch)
+sae     https://git.sinacloud.com/XXXXtjb (push)
 ```
 
 
@@ -90,7 +90,7 @@ git push origin :branch-name
 
 ```
 E:\projects\im-h5-wechat>git push origin :wxTest
-To git@gitlab.it.ikang.com:fe/im-h5-wechat.git
+To git@gitlab.it.XXXX.com:fe/im-h5-wechat.git
  - [deleted]         wxTest
 ```
 
@@ -143,7 +143,7 @@ git push origin b1:b2
 ```
 E:\projects\im-h5-wechat>git push origin wxTest:wxTest
 Total 0 (delta 0), reused 0 (delta 0)
-To git@gitlab.it.ikang.com:fe/im-h5-wechat.git
+To git@gitlab.it.XXXX.com:fe/im-h5-wechat.git
  * [new branch]      wxTest -> wxTest
 
 E:\projects\im-h5-wechat>git branch -r
@@ -166,13 +166,13 @@ git push remote-repository-name local-branch-name:remote-branch-name
 `
 
 ```
-E:\projects\im-h5-wechat>git push git@gitlab.it.ikang.com:fe/im-h5-wechat.git wxTest:wxTest 
+E:\projects\im-h5-wechat>git push git@gitlab.it.XXXX.com:fe/im-h5-wechat.git wxTest:wxTest 
 Counting objects: 6, done.                                                                  
 Delta compression using up to 4 threads.                                                    
 Compressing objects: 100% (6/6), done.                                                      
 Writing objects: 100% (6/6), 642 bytes | 0 bytes/s, done.                                   
 Total 6 (delta 3), reused 0 (delta 0)                                                       
-To git@gitlab.it.ikang.com:fe/im-h5-wechat.git                                              
+To git@gitlab.it.XXXX.com:fe/im-h5-wechat.git                                              
  * [new branch]      wxTest -> wxTest                                                       
                                                                                             
 E:\projects\im-h5-wechat>git branch -r                                                      
@@ -197,7 +197,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 642 bytes | 0 bytes/s, done.
 Total 6 (delta 3), reused 0 (delta 0)
-To git@gitlab.it.ikang.com:fe/im-h5-wechat.git
+To git@gitlab.it.XXXX.com:fe/im-h5-wechat.git
    11cc880..e2eff39  wxTest -> wxTest
 ```
 
@@ -235,7 +235,7 @@ Already up-to-date.
 注意：上面的命令中`<remote>`不能用实际仓库名来代替，如下：
 
 `
-git branch --set-upstream-to=git@gitlab.it.ikang.com:fe/im-h5-wechat.git/wxTest wxTest
+git branch --set-upstream-to=git@gitlab.it.XXXX.com:fe/im-h5-wechat.git/wxTest wxTest
 `
 
 用上面的命令来实现跟踪会报错。
@@ -308,14 +308,14 @@ git pull <远程库名> <远程分支名>:<本地分支名>
 比如，从im-h5的远程仓库中获取master分支的最新内容，与我本地的im-h5-wechat仓库中的master分支合并，要写成：
 
 ```
-git pull git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git master:master
+git pull git@gitlab.it.XXXX.com:fuchao.zheng/im-h5.git master:master
 ```
 
 如果是要与本地当前分支merge，则冒号后面的<本地分支名>可以不写。
 比如，我当前本地的仓库是在master分支，我也是要与本地的master分支合并，则可以写成：
 
 ```
-git pull git@gitlab.it.ikang.com:fuchao.zheng/im-h5.git master
+git pull git@gitlab.it.XXXX.com:fuchao.zheng/im-h5.git master
 ```
 
 **6. 查看本地分支**
@@ -382,3 +382,37 @@ git push origin [name]
 git push origin :heads/[name]   或  git push origin :[name]
 ```
 
+# 将本地项目文件推送到gitlab上 
+**Git global setup**
+```
+git config --global user.name "yaoning"
+git config --global user.email "ning.yao@XXXX.com"
+```
+
+**Create a new repository**
+```
+git clone git@gitlab.it.XXXX.com:fe/fe-inv-h5.git
+cd fe-inv-h5
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+```
+
+**Existing folder**
+```
+cd existing_folder
+git init
+git remote add origin git@gitlab.it.XXXX.com:fe/fe-inv-h5.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+**Existing Git repository**
+```
+cd existing_repo
+git remote add origin git@gitlab.it.XXXX.com:fe/fe-inv-h5.git
+git push -u origin --all
+git push -u origin --tags
+```
